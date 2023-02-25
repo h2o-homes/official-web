@@ -1,0 +1,185 @@
+body {
+  font-family: Open Sans;
+  color: #FFFFFF;
+}
+[data-aos=fade-in-left] {
+  transform: translateX(-20px);
+}
+[data-aos=fade-in-right] {
+  transform: translateX(20px);
+}
+[data-aos=fade-up] {
+  transform: translateY(100px);
+}
+[data-aos=zoom-in] {
+  transform: scale(.6);
+}
+[data-aos^=fade] {
+  opacity: 0;
+  transition-property: opacity,transform;
+}
+[data-aos^=zoom] {
+  opacity: 0;
+  transition-property: opacity,transform;
+}
+[data-aos][data-aos-duration="800"], body[data-aos-duration="800"] [data-aos] {
+  transition-duration: .8s;
+}
+[data-aos][data-aos-duration="400"], body[data-aos-duration="400"] [data-aos] {
+  transition-duration: .4s;
+}
+[data-aos][data-aos-delay="800"], body[data-aos-delay="400"] [data-aos] {
+  transition-delay: .4s;
+}
+[data-aos][data-aos-delay="800"], body[data-aos-delay="400"] [data-aos] {
+  transition-delay: .4s;
+}
+[data-aos][data-aos-easing=ease-in-out-sine], body[data-aos-easing=ease-in-out-sine] [data-aos] {
+  transition-timing-function: cubic-bezier(.445,.05,.55,.95);
+}
+[data-aos^=fade].aos-animate {
+  opacity: 1;
+  transform: translate(0);
+}
+[data-aos^=zoom].aos-animate {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+@keyframes bounce-down {
+  25% {
+    transform: translateY(-16px);
+  }
+  50%, 100% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(16px);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: .8s;
+  animation-timing-function: cubic-bezier(.445,.05,.55,.95);
+  animation-fill-mode: forwards;
+}
+
+@keyframes backgroundImageScale {
+  from {
+    background-size: 100% 100%;
+  }
+
+  to {
+    background-size: 120% 120%;
+  }
+}
+
+.svg-icon {
+  &.heart {
+    color: #CCC;
+  }
+  &.heart-fill {
+    color: #ED5F5F;
+  }
+}
+
+.skeleton {
+  .active {
+    background: linear-gradient(90deg,rgba(190,190,190,.2) 25%,rgba(129,129,129,.24) 37%,rgba(190,190,190,.2) 63%);
+    background-size: 400% 100%;
+    animation: ant-skeleton-loading 1.4s ease infinite;
+  }
+  .cover {
+    width: 100%;
+    padding-bottom:100%;
+    background-color: @skeleton-color
+  }
+  .line {
+    height: 18px;
+    border-radius: 4px;
+    background-color: @skeleton-color
+  }
+  .avatar {
+    display: flex;
+    align-items: center;
+    >.logo {
+      margin-right: 10px;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: @skeleton-color
+    }
+  }
+}
+
+.h-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 16px;
+  background: #2AF1C0;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  &:hover {
+    background-color: #A5F8E4;
+  }
+}
